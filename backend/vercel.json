@@ -1,5 +1,10 @@
 {
+    "version": 2,
     "builds": [
+      {
+        "src": "frontend/index.html",
+        "use": "@vercel/static"
+      },
       {
         "src": "server.js",
         "use": "@vercel/node"
@@ -8,8 +13,11 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/server.js",
-        "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+        "dest": "/frontend/index.html"
+      },
+      {
+        "src": "/api/(.*)",
+        "dest": "/server.js"
       }
     ]
   }
