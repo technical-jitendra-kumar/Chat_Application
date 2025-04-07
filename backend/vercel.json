@@ -2,8 +2,9 @@
     "version": 2,
     "builds": [
       {
-        "src": "frontend/index.html",
-        "use": "@vercel/static"
+        "src": "frontend/package.json",
+        "use": "@vercel/vite",
+        "config": { "zeroConfig": true }
       },
       {
         "src": "server.js",
