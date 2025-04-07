@@ -7,18 +7,19 @@
         "config": { "zeroConfig": true }
       },
       {
-        "src": "server.js",
+        "src": "backend/server.js",
         "use": "@vercel/node"
       }
     ],
     "routes": [
       {
-        "src": "/(.*)",
-        "dest": "/frontend/dist/index.html" 
+        "src": "/api/(.*)",
+        "dest": "backend/server.js"
       },
       {
-        "src": "/api/(.*)",
-        "dest": "/server.js"
+        "src": "/(.*)",
+        "dest": "/frontend/dist/index.html"
       }
     ]
   }
+  
